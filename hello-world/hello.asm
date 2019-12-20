@@ -2,7 +2,7 @@ section .text                   ;section declaration
 
                                 ;we must export the entry point to the ELF linker or
 global  _start                  ;loader.
-			                    ;entry point. Use ld -e foo to override the default.
+			        ;entry point. Use ld -e foo to override the default.
 
 _start:
                                 ;write our string to stdout
@@ -13,8 +13,7 @@ _start:
     int     0x80                ;call kernel
 
                                 ;and exit
-
-  	mov     ebx,0               ;first syscall argument: exit code
+    mov     ebx,0               ;first syscall argument: exit code
     mov     eax,1               ;system call number (sys_exit)
     int     0x80                ;call kernel
 
